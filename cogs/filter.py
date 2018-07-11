@@ -51,7 +51,7 @@ class Filter:
                     em = discord.Embed(description=f'{msg.author} got banned!')
                     em.set_author(name=f'Harmony#8978 (447420402713755648)', icon_url=f'https://cdn.discordapp.com/avatars/447420402713755648/48936083e9e75a45912a1550909913e7.png?size=2048')
                     await msg.channel.send(embed=em, delete_after=6)
-                    emb = discord.Embed(description=f"Action: Ban\nReason: Advertising another server")
+                    emb = discord.Embed(description=f'Action: Ban\nReason: Advertising another server')
                     emb.set_author(name=f'Harmony#8978 (447420402713755648)', icon_url=f'https://cdn.discordapp.com/avatars/447420402713755648/48936083e9e75a45912a1550909913e7.png?size=2048')
                     await msg.author.send(embed=emb)
                 except:
