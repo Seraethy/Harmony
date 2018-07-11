@@ -202,7 +202,7 @@ class Moderation:
         
         elif discord.utils.get(member.roles, id=446371354615218186):
             emb = discord.Embed(description='You can\'t mute a member twice')
-            emb.set_author(name=f'{ctx.author}', icon_url=f'{ctx.author.avatar_url}')
+            emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             await ctx.send(embed=emb, delete_after=6)
             return
 
@@ -212,10 +212,10 @@ class Moderation:
         elif ctx:
             try:
                 embe = discord.Embed(description=f'{member} got muted')
-                embe.set_author(name=f'{ctx.author}', icon_url=f'{ctx.author.avatar_url}')
+                embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
                 await ctx.send(embed=embe, delete_after=6)
                 embed = discord.Embed(description=f'Action: Mute ({minutes} minute{"s" if minutes!=1 else ""})\nReason: {reason}')
-                embed.set_author(name=f'{ctx.author}', icon_url=f'{ctx.author.avatar_url}')
+                embed.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
                 await member.send(embed=embed)
             except:
                 pass
@@ -226,14 +226,18 @@ class Moderation:
 
 
     async def on_unmute_event(self, guild_id, user_id):
-        #NEEDS WORK
         guild = self.bot.get_guild(guild_id)
         member = guild.get_member(user_id)
         if member:
             try:
-                #EMBED FOR GETTING UNMUTED
-                #LOG UNMUTE
+                try:
+                    em = discord.Embed(description='Action: Unmute\nReason: Expiration of mute')
+                    em.set_author(name='Harmony#8978 (447420402713755648)', icon_url='https://cdn.discordapp.com/avatars/447420402713755648/48936083e9e75a45912a1550909913e7.png?size=2048')
+                    await member.send(embed=em)
+                except:
+                    pass
                 await member.remove_roles(discord.utils.get(guild.roles, id=446371354615218186))
+                await self.stafflog.make_case(member, 'Unmute', 'Expiration of mute', 'Harmony#8978')
             except:
                 return
 
@@ -243,7 +247,7 @@ class Moderation:
     async def unmute(self, ctx, member: discord.Member, *, reason=None):
         if discord.utils.get(member.roles, id=446371354615218186) is None:
             em = discord.Embed(description='This person isn\'t muted')
-            em.set_author(name=f'{ctx.author}', icon_url=f'{ctx.author.avatar_url}')
+            em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             await ctx.send(embed=em, delete_after=6)
             return
 
@@ -252,11 +256,11 @@ class Moderation:
 
         elif ctx:
             try:
-                emb = discord.Embed(description=f'**{member.name}** got their mute removed')
-                emb.set_author(name=f'{ctx.author}', icon_url=f'{ctx.author.avatar_url}')
+                emb = discord.Embed(description=f'{member} got their mute removed')
+                emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
                 await ctx.send(embed=emb, delete_after=6)
                 embe = discord.Embed(description=f'Action: Unmute\nReason: {reason}')
-                embe.set_author(name=f'{ctx.author}', icon_url=f'{ctx.author.avatar_url}')
+                embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
                 await member.send(embed=embe)
             except:
                 pass
