@@ -82,9 +82,26 @@ class Filter:
                 embed.set_author(name=f'Harmony#8978 (447420402713755648)', icon_url=f'https://cdn.discordapp.com/avatars/447420402713755648/48936083e9e75a45912a1550909913e7.png?size=2048')
                 await msg.channel.send(embed=embed, delete_after=6)
 
+        if len(msg.mentions) >= 10:
+            try:
+                await msg.delete()
+                em = discord.Embed(description=f'{msg.author} got banned')
+                em.set_author(name='Harmony#8978 (447420402713755648)', icon_url='https://cdn.discordapp.com/avatars/447420402713755648/48936083e9e75a45912a1550909913e7.png?size=2048')
+                await msg.channel.send(embed=em, delete_after=6)
+                emb = discord.Embed(description='Action: Ban\nReason: Mentioning more than 10 members')
+                emb.set_author(name='Harmony#8978 (447420402713755648)', icon_url='https://cdn.discordapp.com/avatars/447420402713755648/48936083e9e75a45912a1550909913e7.png?size=2048')
+            except:
+                pass
+
+            await msg.guild.ban(discord.Object(id=msg.author.id), reason='Mentioning more than 10 members')
+            await self.stafflog.make_case(msg.author, 'Ban', 'Mentioning more than 10 members', 'Harmony#8978')
+
+        if len(msg.mentions) >= 5:
+            await msg.delete()
+            em = discord.Embed(description='You aren\'t allowed to mention more than 5 people at once')
+            em.set_author(name=f'Harmony#8978 (447420402713755648)', icon_url=f'https://cdn.discordapp.com/avatars/447420402713755648/48936083e9e75a45912a1550909913e7.png?size=2048')
+            await msg.channel.send(embed=em, delete_after=6)
+
 
 def setup (bot):
     bot.add_cog(Filter(bot))
-
-
-#MASS PING FILTER
