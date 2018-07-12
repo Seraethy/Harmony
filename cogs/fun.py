@@ -492,6 +492,32 @@ class Fun:
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
 
+    @commands.command()
+    @commands.guild_only()
+    async def tackle(self, ctx, member: discord.Member):
+        GIFs = [
+            ''
+        ]   
+        if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
+            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
+            em.colour = ctx.author.color
+            await ctx.send(embed=em, delete_after=6)
+        
+        elif ctx.author == member:
+            emb = discord.Embed(description='')
+            emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
+            emb.set_image(url=random.choice(EXTRA_GIFs))
+            emb.colour = ctx.author.color
+            await ctx.send(embed=emb)
+
+        else:
+            embe = discord.Embed(description='')
+            embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
+            embe.set_image(url=random.choice(GIFs))
+            embe.colour = ctx.author.color
+            await ctx.send(embed=embe)
+
 
 #ADD A GLOBAL TIMER TO THE COMMANDS
 #RANDOM SAD GIF
