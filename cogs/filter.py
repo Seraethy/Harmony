@@ -41,6 +41,9 @@ class Filter:
         elif msg.channel.id in EXCLUDED_CHANNELS:
             return
 
+        if msg.author.bot:
+            return
+
         invite = self.inviteregex.search(msg.content)
         if invite:
             if msg.channel.id in EXCLUDED_CHANNELS_INVITE:
