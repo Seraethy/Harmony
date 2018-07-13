@@ -15,8 +15,10 @@ EXTRA_GIFs = [
 
 class Fun:
 
+  
     def __init__(self, bot):
         self.bot = bot
+
 
     @commands.group(invoke_without_command=True)
     @commands.guild_only()
@@ -70,24 +72,25 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466279322441875466/kiss_forehead_5.gif'
         ]   
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description=f'**{ctx.author.name}**, that\'s just sad...')
+            emb = discord.Embed(description=f'You can\'t kiss yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
             await ctx.send(embed=emb)
 
         else:
-            embe = discord.Embed(description=f'**{member.name}**, you got a kiss from **{ctx.author.name}**!')
+            embe = discord.Embed(description=f'**{member.name}**, you got a kiss from **{ctx.author.name}**')
             embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @kiss.command(name='cheek')
     @commands.guild_only()
@@ -108,13 +111,13 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466314617279217675/kiss_cheek_13.gif'
         ]
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description=f'**{ctx.author.name}**, that\'s just sad...')
+            emb = discord.Embed(description=f'You can\'t kiss yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
@@ -126,6 +129,7 @@ class Fun:
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @kiss.command(name='forehead')
     @commands.guild_only()
@@ -138,13 +142,13 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466279322441875466/kiss_forehead_5.gif'
         ]
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description=f'**{ctx.author.name}**, that\'s just sad...')
+            emb = discord.Embed(description=f'You can\'t kiss yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
@@ -156,6 +160,7 @@ class Fun:
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @kiss.command(name='lips')
     @commands.guild_only()
@@ -191,13 +196,13 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466274727716192265/kiss_28.gif'
         ]
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description=f'**{ctx.author.name}**, that\'s just sad...')
+            emb = discord.Embed(description=f'You can\'t kiss yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
@@ -209,6 +214,7 @@ class Fun:
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @commands.command()
     @commands.guild_only()
@@ -238,24 +244,25 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466277575619248138/slap_21.gif'
         ]   
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description='')
+            emb = discord.Embed(description=f'You can\'t slap yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
             await ctx.send(embed=emb)
 
         else:
-            embe = discord.Embed(description='')
+            embe = discord.Embed(description=f'**{member.name}**, you got a slap from **{ctx.author.name}**')
             embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @commands.command()
     @commands.guild_only()
@@ -291,24 +298,25 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466334156411109376/hug_28.gif'
         ]   
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description='')
+            emb = discord.Embed(description=f'You can\'t hug yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
             await ctx.send(embed=emb)
 
         else:
-            embe = discord.Embed(description='')
+            embe = discord.Embed(description=f'**{member.name}**, you got a hug from **{ctx.author.name}**')
             embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @commands.command()
     @commands.guild_only()
@@ -333,24 +341,25 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466353212790800394/cuddle_17.gif'
         ]   
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description='')
+            emb = discord.Embed(description=f'You can\'t cuddle yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
             await ctx.send(embed=emb)
 
         else:
-            embe = discord.Embed(description='')
+            embe = discord.Embed(description=f'**{member.name}**, you got a cuddle from **{ctx.author.name}**')
             embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @commands.command()
     @commands.guild_only()
@@ -369,24 +378,25 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466361602204106753/lick_11.gif'
         ]
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description='')
+            emb = discord.Embed(description=f'You can\'t lick yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
             await ctx.send(embed=emb)
 
         else:
-            embe = discord.Embed(description='')
+            embe = discord.Embed(description=f'**{member.name}**, you were licked by **{ctx.author.name}**')
             embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @commands.command(aliases=['suck'])
     @commands.guild_only()
@@ -395,24 +405,25 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466366978924478464/succ.gif'
         ]   
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description='')
+            emb = discord.Embed(description=f'You can\'t suck yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
             await ctx.send(embed=emb)
 
         else:
-            embe = discord.Embed(description='')
+            embe = discord.Embed(description=f'**{member.name}**, you got sucked real hard by **{ctx.author.name}**')
             embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @commands.command()
     @commands.guild_only()
@@ -421,24 +432,25 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466367724696633351/pat.gif'
         ]   
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description='')
+            emb = discord.Embed(description=f'You can\'t pat yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
             await ctx.send(embed=emb)
 
         else:
-            embe = discord.Embed(description='')
+            embe = discord.Embed(description=f'**{member.name}**, you got a pat from **{ctx.author.name}**')
             embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @commands.command()
     @commands.guild_only()
@@ -447,24 +459,25 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466367729172217866/poke.gif'
         ]   
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description='')
+            emb = discord.Embed(description=f'You can\'t poke yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
             await ctx.send(embed=emb)
 
         else:
-            embe = discord.Embed(description='')
+            embe = discord.Embed(description=f'**{member.name}**, you got a poke from **{ctx.author.name}**')
             embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @commands.command()
     @commands.guild_only()
@@ -473,24 +486,25 @@ class Fun:
             'https://cdn.discordapp.com/attachments/463105098155819019/466367770041253888/highfive.gif'
         ]   
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description='')
+            emb = discord.Embed(description=f'You can\'t give yourself a high five, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
             await ctx.send(embed=emb)
 
         else:
-            embe = discord.Embed(description='')
+            embe = discord.Embed(description=f'**{member.name}**, you got a high five from **{ctx.author.name}**')
             embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
             await ctx.send(embed=embe)
+
 
     @commands.command()
     @commands.guild_only()
@@ -499,20 +513,20 @@ class Fun:
             ''
         ]   
         if discord.utils.get(ctx.author.roles, id=451747451251064843) is None:
-            em = discord.Embed(description='You need to be level 10 to use this command!')
+            em = discord.Embed(description='You need to be level 10 to use this command')
             em.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             em.colour = ctx.author.color
             await ctx.send(embed=em, delete_after=6)
         
         elif ctx.author == member:
-            emb = discord.Embed(description='')
+            emb = discord.Embed(description=f'You can\'t tackle yourself, **{ctx.author.name}**')
             emb.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             emb.set_image(url=random.choice(EXTRA_GIFs))
             emb.colour = ctx.author.color
             await ctx.send(embed=emb)
 
         else:
-            embe = discord.Embed(description='')
+            embe = discord.Embed(description=f'**{member.name}**, you got tackled by **{ctx.author.name}**')
             embe.set_author(name=f'{ctx.author} ({ctx.author.id})', icon_url=f'{ctx.author.avatar_url}')
             embe.set_image(url=random.choice(GIFs))
             embe.colour = ctx.author.color
@@ -520,7 +534,6 @@ class Fun:
 
 
 #ADD A GLOBAL TIMER TO THE COMMANDS
-#RANDOM SAD GIF
 #MAKE IT SO THE MAIN EMBED ISN'T BLACK
 
 def setup(bot):
