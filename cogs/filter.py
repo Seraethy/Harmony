@@ -70,7 +70,7 @@ class Filter:
             
             elif discord.utils.get(msg.author.roles, id=451747449560629258) is None:
                 await msg.delete()
-                embe = discord.Embed(description=f'You can\'t post links below level 5!')
+                embe = discord.Embed(description=f'You need to be level 5 to post links')
                 embe.set_author(name=f'Harmony#8978 (447420402713755648)', icon_url=f'https://cdn.discordapp.com/avatars/447420402713755648/48936083e9e75a45912a1550909913e7.png?size=2048')
                 await msg.channel.send(embed=embe, delete_after=6)
                 #LOG THE DELETED LINKS?
@@ -81,7 +81,7 @@ class Filter:
 
             elif discord.utils.get(msg.author.roles, id=451747449560629258) is None:
                 await msg.delete()
-                embed = discord.Embed(description=f'You can\'t send messages with attachments in them below level 5!')
+                embed = discord.Embed(description=f'You need to be level 5 to post images')
                 embed.set_author(name=f'Harmony#8978 (447420402713755648)', icon_url=f'https://cdn.discordapp.com/avatars/447420402713755648/48936083e9e75a45912a1550909913e7.png?size=2048')
                 await msg.channel.send(embed=embed, delete_after=6)
 
